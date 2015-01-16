@@ -221,6 +221,7 @@ class Console {
         foreach ($config['servers'] as $server) {
             $this->serversConfig[] = $server;
         }
+        getenv('BEANSTALK_SERVERS');
         if (isset($_ENV['BEANSTALK_SERVERS'])) {
             foreach (explode(",", $_ENV["BEANSTALK_SERVERS"]) as $server) {
                 $this->serversEnv[] = $server;
